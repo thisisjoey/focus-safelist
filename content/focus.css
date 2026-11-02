@@ -81,7 +81,9 @@ html[data-yf-theme='dark'] :is(.yf-safelist-btn, #yf-pill, #yf-toast, #yf-gate, 
   position: fixed;
   left: 16px;
   bottom: 16px;
-  z-index: 2000;
+  /* Above YouTube's side guide (2021), which is transparent but still takes
+     the clicks, and the mini guide (2028); below its menus (~2202). */
+  z-index: 2100;
   display: flex;
   align-items: center;
   gap: 8px;

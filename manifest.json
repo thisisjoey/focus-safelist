@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Focus Safelist for YouTube",
   "short_name": "Focus Safelist",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "See only videos from channels you trust. Hides other recommendations and Shorts so YouTube stops pulling you in.",
   "minimum_chrome_version": "111",
   "permissions": ["storage"],

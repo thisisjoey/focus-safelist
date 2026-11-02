@@ -168,9 +168,11 @@ ${ON}[data-yf-home="feed"][data-yf-route="home"]${NO_PEEK} ${SEL.chipbarBackdrop
         text: '⚙',
       }));
     const start = (e) => {
-      if (ROOT.hasAttribute('data-yf-peek')) return;
       if (e.type === 'keydown' && (e.repeat || (e.key !== ' ' && e.key !== 'Enter'))) return;
       e.preventDefault();
+      // "Hide again" acts on press, not click, so letting go at the end of a
+      // hold can't undo the peek it just started.
+      if (ROOT.hasAttribute('data-yf-peek')) return YF.setPeek(false);
       const secs = Math.max(1, Number(YF.settings.peekHoldSeconds) || 5);
       btn.style.setProperty('--yf-hold', secs + 's');
       btn.classList.add('yf-holding');
@@ -187,9 +189,6 @@ ${ON}[data-yf-home="feed"][data-yf-route="home"]${NO_PEEK} ${SEL.chipbarBackdrop
     btn.addEventListener('pointerdown', start);
     btn.addEventListener('keydown', start);
     for (const ev of ['pointerup', 'pointerleave', 'pointercancel', 'keyup', 'blur']) btn.addEventListener(ev, cancel);
-    btn.addEventListener('click', () => {
-      if (ROOT.hasAttribute('data-yf-peek')) YF.setPeek(false);
-    });
     pill.querySelector('.yf-pill-gear').addEventListener('click', () => YF.openOptions());
     document.body.append(pill);
   }
