@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Focus Safelist for YouTube",
+  "short_name": "Focus Safelist",
+  "version": "1.0.1",
+  "description": "See only videos from channels you trust. Hides other recommendations and Shorts so YouTube stops pulling you in.",
+  "minimum_chrome_version": "111",
+  "permissions": ["storage"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "background": { "service_worker": "background.js" },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Focus Safelist",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "options_ui": { "page": "options/options.html", "open_in_tab": true },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content/page-world.js"],
+      "world": "MAIN",
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": [
+        "lib/core.js",
+        "lib/store.js",
+        "content/selectors.js",
+        "content/state.js",
+        "content/filter.js",
+        "content/watch.js",
+        "content/home-feed.js",
+        "content/main.js"
+      ],
+      "css": ["content/focus.css"],
+      "run_at": "document_start"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Focus Safelist</title>
+    <link rel="stylesheet" href="../lib/ui.css" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body data-state="active">
+    <header class="top">
+      <img src="../icons/icon48.png" alt="" class="logo" />
+      <div class="title">
+        <h1>Focus Safelist</h1>
+        <p id="status" class="status"></p>
+      </div>
+      <label class="switch" title="Focus on or off">
+        <input type="checkbox" id="master" aria-label="Focus on or off" />
+        <span></span>
+      </label>
+    </header>
+
+    <section id="unlock" class="unlock panel" hidden></section>
+
+    <section id="current" class="current panel" hidden>
+      <div class="avatar-wrap">
+        <img id="cur-avatar" class="avatar" alt="" hidden />
+        <span id="cur-initial" class="avatar initial" aria-hidden="true"></span>
+      </div>
+      <div class="cur-text">
+        <p id="cur-name" class="cur-name"></p>
+        <p id="cur-state" class="cur-state"></p>
+      </div>
+      <button id="cur-btn" class="btn" type="button"></button>
+    </section>
+
+    <section class="stats">
+      <div class="stat">
+        <strong id="today-total">0m</strong>
+        <span>watched today</span>
+      </div>
+      <div class="stat">
+        <strong id="today-safe">–</strong>
+        <span>from safelist</span>
+      </div>
+      <div class="stat">
+        <strong id="count">0</strong>
+        <span>channels</span>
+      </div>
+    </section>
+
+    <footer>
+      <button id="open-options" class="btn ghost wide" type="button">Manage safelist &amp; settings →</button>
+    </footer>
+
+    <script src="../lib/core.js"></script>
+    <script src="../lib/store.js"></script>
+    <script src="../lib/unlock.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

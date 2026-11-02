@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Focus Safelist · Settings</title>
+    <link rel="stylesheet" href="../lib/ui.css" />
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="side">
+        <div class="brand">
+          <img src="../icons/icon48.png" alt="" />
+          <div>
+            <strong>Focus Safelist</strong>
+            <span>for YouTube</span>
+          </div>
+        </div>
+
+        <div class="status-card" id="status-card">
+          <div class="status-row">
+            <span class="dot" aria-hidden="true"></span>
+            <strong id="status-title">On</strong>
+            <label class="switch" title="Focus on or off">
+              <input type="checkbox" id="master" aria-label="Focus on or off" />
+              <span></span>
+            </label>
+          </div>
+          <p id="status-text" class="muted small"></p>
+        </div>
+
+        <nav class="nav" aria-label="Sections">
+          <a href="#safelist">Safelist</a>
+          <a href="#rules">Focus rules</a>
+          <a href="#schedule">Schedule</a>
+          <a href="#lock">Lock</a>
+          <a href="#stats">Watch time</a>
+          <a href="#backup">Backup</a>
+        </nav>
+      </aside>
+
+      <main>
+        <section id="welcome" class="welcome" hidden>
+          <h2>Welcome. Let’s make YouTube quieter.</h2>
+          <ol>
+            <li>Open a video from a channel you trust and click <b>+ Safelist</b> next to Subscribe. You can also paste channel links below.</li>
+            <li>Everything else disappears from the home page and the sidebar. Shorts are blocked.</li>
+            <li>Need to see what’s hidden? Hold <b>Hold to peek</b> at the bottom-left of YouTube for 5 seconds.</li>
+          </ol>
+          <p class="muted small">Your safelist is saved to your Chrome profile and syncs to your other Chrome browsers.</p>
+        </section>
+
+        <!-- Safelist -->
+        <section id="safelist" class="section">
+          <header class="section-head">
+            <div>
+              <h2>Safelist <span id="count-badge" class="badge">0</span></h2>
+              <p class="muted">Only videos from these channels show up on your home page and next to the video you’re watching.</p>
+            </div>
+          </header>
+
+          <form id="add-form" class="add-form" autocomplete="off">
+            <input id="add-input" type="text" placeholder="Paste a channel link, @handle or a video link" spellcheck="false" aria-label="Channel to add" />
+            <button class="btn primary" type="submit" id="add-btn">Add channel</button>
+          </form>
+          <p id="add-msg" class="form-msg" role="status"></p>
+
+          <div class="list-tools">
+            <input id="filter" type="search" placeholder="Search your safelist" aria-label="Search your safelist" />
+            <select id="sort" aria-label="Sort channels">
+              <option value="name">A–Z</option>
+              <option value="recent">Recently added</option>
+            </select>
+          </div>
+
+          <ul id="channel-list" class="channel-list"></ul>
+          <p id="list-empty" class="empty" hidden>No channels yet. Add one above, or click <b>+ Safelist</b> next to Subscribe while watching.</p>
+        </section>
+
+        <!-- Rules -->
+        <section id="rules" class="section">
+          <header class="section-head">
+            <div>
+              <h2>Focus rules</h2>
+              <p class="muted">What happens on YouTube while Focus is on.</p>
+            </div>
+          </header>
+
+          <div class="group">
+            <h3>Home page</h3>
+            <label class="choice">
+              <input type="radio" name="homeMode" value="feed" data-setting="homeMode" />
+              <span><b>Latest from my safelist</b><small>Replace recommendations with new uploads from your channels.</small></span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="homeMode" value="filter" data-setting="homeMode" />
+              <span><b>YouTube’s home, filtered</b><small>Keep recommendations, but only from safelisted channels.</small></span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="homeMode" value="subscriptions" data-setting="homeMode" />
+              <span><b>Go to Subscriptions</b><small>Skip the home page entirely. Also filtered to your safelist.</small></span>
+            </label>
+          </div>
+
+          <div class="group">
+            <h3>Search results</h3>
+            <label class="choice">
+              <input type="radio" name="searchMode" value="blur" data-setting="searchMode" />
+              <span><b>Blur, click to reveal</b><small>You searched on purpose, so results stay one click away.</small></span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="searchMode" value="hide" data-setting="searchMode" />
+              <span><b>Hide</b><small>Only show results from safelisted channels.</small></span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="searchMode" value="show" data-setting="searchMode" />
+              <span><b>Show everything</b><small>Don’t filter search at all.</small></span>
+            </label>
+          </div>
+
+          <div class="group">
+            <h3>While watching</h3>
+            <label class="toggle">
+              <span><b>Ask before playing other channels’ videos</b><small>“Watch anyway?” for videos opened from links or search.</small></span>
+              <span class="switch"><input type="checkbox" data-setting="gateWatch" /><span></span></span>
+            </label>
+            <label class="toggle">
+              <span><b>Turn off autoplay</b><small>Don’t roll into the next video when one ends.</small></span>
+              <span class="switch"><input type="checkbox" data-setting="disableAutoplay" /><span></span></span>
+            </label>
+            <label class="toggle">
+              <span><b>Hide end-screen suggestions</b><small>No video wall or cards when a video finishes.</small></span>
+              <span class="switch"><input type="checkbox" data-setting="hideEndscreen" /><span></span></span>
+            </label>
+            <label class="toggle">
+              <span><b>Hide comments</b></span>
+              <span class="switch"><input type="checkbox" data-setting="hideComments" /><span></span></span>
+            </label>
+          </div>
+
+          <div class="group">
+            <h3>Everywhere</h3>
+            <label class="toggle">
+              <span><b>Block Shorts</b><small>Hides every Shorts shelf, tab and link, and redirects Shorts pages away.</small></span>
+              <span class="switch"><input type="checkbox" data-setting="hideShorts" /><span></span></span>
+            </label>
+            <label class="toggle">
+              <span><b>Hide Explore &amp; Trending</b></span>
+              <span class="switch"><input type="checkbox" data-setting="hideExplore" /><span></span></span>
+            </label>
+            <label class="toggle">
+              <span><b>Hide the notifications bell</b></span>
+              <span class="switch"><input type="checkbox" data-setting="hideNotifications" /><span></span></span>
+            </label>
+            <label class="toggle">
+              <span><b>Hold to peek</b><small>How long to hold the button before hidden videos are shown.</small></span>
+              <span class="inline-input"><input type="number" min="1" max="30" step="1" data-setting="peekHoldSeconds" aria-label="Seconds to hold" /> sec</span>
+            </label>
+          </div>
+        </section>
+
+        <!-- Schedule -->
+        <section id="schedule" class="section">
+          <header class="section-head">
+            <div>
+              <h2>Schedule</h2>
+              <p class="muted">Leave this off to keep Focus on all the time.</p>
+            </div>
+          </header>
+          <div class="group">
+            <label class="toggle">
+              <span><b>Only filter during set hours</b><small id="schedule-summary"></small></span>
+              <span class="switch"><input type="checkbox" data-setting="schedule.enabled" /><span></span></span>
+            </label>
+            <fieldset id="schedule-fields" class="schedule-fields">
+              <legend class="sr-only">Schedule</legend>
+              <div class="days" id="days" role="group" aria-label="Days"></div>
+              <div class="hours">
+                <label>From <input type="time" data-setting="schedule.start" /></label>
+                <label>to <input type="time" data-setting="schedule.end" /></label>
+              </div>
+              <label class="toggle">
+                <span><b>Keep Shorts blocked outside these hours</b></span>
+                <span class="switch"><input type="checkbox" data-setting="shortsAlways" /><span></span></span>
+              </label>
+            </fieldset>
+          </div>
+        </section>
+
+        <!-- Lock -->
+        <section id="lock" class="section">
+          <header class="section-head">
+            <div>
+              <h2>Lock</h2>
+              <p class="muted">Friction before Focus is switched off or a rule is loosened. It slows down impulses; it can’t stop a determined you.</p>
+            </div>
+          </header>
+          <div class="group">
+            <fieldset id="lock-fields" class="lock-fields" disabled>
+              <legend class="sr-only">Lock</legend>
+              <label class="choice">
+                <input type="radio" name="lockMode" value="wait" />
+                <span><b>Wait before turning off</b><small>A countdown you have to sit through. <span class="inline-input"><input type="number" id="lock-seconds" min="5" max="600" step="5" aria-label="Seconds to wait" /> seconds</span></small></span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="lockMode" value="phrase" />
+                <span><b>Type a sentence</b><small>No pasting. <input type="text" id="lock-phrase" class="phrase-input" aria-label="Sentence to type" /></small></span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="lockMode" value="none" />
+                <span><b>No lock</b><small>Turn off instantly.</small></span>
+              </label>
+            </fieldset>
+            <div class="row">
+              <button id="lock-edit" class="btn" type="button">Change lock</button>
+              <button id="lock-save" class="btn primary" type="button" hidden>Save lock</button>
+              <button id="lock-cancel" class="btn ghost" type="button" hidden>Cancel</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Stats -->
+        <section id="stats" class="section">
+          <header class="section-head">
+            <div>
+              <h2>Watch time</h2>
+              <p class="muted">Time a video was actually playing, counted on this computer.</p>
+            </div>
+          </header>
+          <div id="stat-cards" class="stat-cards"></div>
+          <ol id="days-list" class="days-list"></ol>
+        </section>
+
+        <!-- Backup -->
+        <section id="backup" class="section">
+          <header class="section-head">
+            <div>
+              <h2>Backup</h2>
+              <p class="muted">Your safelist already syncs with your Chrome profile. Export a copy to keep or to move elsewhere.</p>
+            </div>
+          </header>
+          <div class="group">
+            <div class="row">
+              <button id="export" class="btn" type="button">Export safelist</button>
+              <label class="btn" for="import">Import from file…</label>
+              <input id="import" type="file" accept="application/json,.json" hidden />
+            </div>
+            <label class="check"><input type="checkbox" id="import-settings" /> Also replace my settings with the ones in the file</label>
+            <p id="backup-msg" class="form-msg" role="status"></p>
+            <p id="usage" class="muted small"></p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="unlock-dialog" class="unlock-dialog" aria-label="Confirm">
+      <div id="unlock-body" class="unlock"></div>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" hidden>
+      <span id="toast-text"></span>
+      <button id="toast-action" class="btn ghost" type="button" hidden>Undo</button>
+    </div>
+
+    <script src="../lib/core.js"></script>
+    <script src="../lib/store.js"></script>
+    <script src="../lib/unlock.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>
