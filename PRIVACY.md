@@ -32,6 +32,7 @@ The developer does not collect, sell or share any user data. None of the data ab
 ## Permissions
 
 - **storage**: saves your safelist, settings and watch-time totals, as described above.
+- **declarativeContent**: greys out the extension's toolbar button on sites other than YouTube. Chrome applies this rule itself; the extension never sees which sites you visit.
 - **Access to www.youtube.com**: the extension only runs on YouTube, where it filters recommendations and fetches public channel pages.
 
 ## Removing your data

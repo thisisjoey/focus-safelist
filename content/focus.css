@@ -144,9 +144,29 @@ html[data-yf-theme='dark'] :is(.yf-safelist-btn, #yf-pill, #yf-toast, #yf-gate, 
   width: 0;
   background: var(--yf-accent-soft);
 }
+html[data-yf-theme='dark'] .yf-pill-fill {
+  background: #13804a;
+}
 .yf-pill-btn.yf-holding .yf-pill-fill {
-  width: 100%;
-  transition: width var(--yf-hold, 5s) linear;
+  animation: yf-hold-fill var(--yf-hold, 5s) linear forwards;
+}
+html[data-yf-theme='dark'] .yf-pill-btn.yf-holding {
+  color: #fff;
+}
+/* Half the bar fills in the first quarter of the hold, easing into a steady
+   pace for the rest, so the wait feels shorter than it is. */
+@keyframes yf-hold-fill {
+  from {
+    width: 0;
+    animation-timing-function: cubic-bezier(0.2, 0.6, 0.4, 0.8);
+  }
+  25% {
+    width: 50%;
+    animation-timing-function: linear;
+  }
+  to {
+    width: 100%;
+  }
 }
 .yf-pill-label {
   position: relative;

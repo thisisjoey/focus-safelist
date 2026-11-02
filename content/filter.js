@@ -173,7 +173,7 @@ ${ON}[data-yf-home="feed"][data-yf-route="home"]${NO_PEEK} ${SEL.chipbarBackdrop
       // "Hide again" acts on press, not click, so letting go at the end of a
       // hold can't undo the peek it just started.
       if (ROOT.hasAttribute('data-yf-peek')) return YF.setPeek(false);
-      const secs = Math.max(1, Number(YF.settings.peekHoldSeconds) || 5);
+      const secs = Math.max(1, Number(YF.settings.peekHoldSeconds) || 2);
       btn.style.setProperty('--yf-hold', secs + 's');
       btn.classList.add('yf-holding');
       clearTimeout(holdTimer);
@@ -202,8 +202,11 @@ ${ON}[data-yf-home="feed"][data-yf-route="home"]${NO_PEEK} ${SEL.chipbarBackdrop
   YF.updatePill = function () {
     if (!document.body) return;
     const peeking = ROOT.hasAttribute('data-yf-peek');
-    const count = ROOT.hasAttribute('data-yf-on') ? hiddenCount() : 0;
-    const show = (count > 0 || peeking) && !document.fullscreenElement;
+    const on = ROOT.hasAttribute('data-yf-on');
+    const count = on ? hiddenCount() : 0;
+    // Always there while Focus is on, even with nothing hidden yet, so it
+    // doesn't come and go as pages load.
+    const show = (on || peeking) && !document.fullscreenElement;
     if (!show) {
       if (pill) pill.hidden = true;
       return;

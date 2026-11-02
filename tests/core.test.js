@@ -228,6 +228,19 @@ test('migrateSettings drops the old default countdown once', () => {
   assert.equal(C.mergeSettings().lock.mode, 'none', 'new installs have no countdown');
 });
 
+test('migrateSettings moves the old 5-second peek default to 2 once', () => {
+  assert.equal(C.migrateSettings({ v: 1, peekHoldSeconds: 5 }).peekHoldSeconds, 2);
+  const migrated = C.migrateSettings({ v: 2, peekHoldSeconds: 5, lock: { mode: 'wait', seconds: 60 } });
+  assert.equal(migrated.peekHoldSeconds, 2);
+  assert.equal(migrated.lock.mode, 'wait', 'a v2 countdown was chosen after the v2 step, so it stays');
+  assert.equal(C.migrateSettings(migrated), null, 'runs only once');
+
+  // Other hold times, and a 5 chosen after upgrading, are kept.
+  assert.equal(C.migrateSettings({ v: 2, peekHoldSeconds: 10 }).peekHoldSeconds, 10);
+  assert.equal(C.migrateSettings({ v: 3, peekHoldSeconds: 5 }), null);
+  assert.equal(C.mergeSettings().peekHoldSeconds, 2, 'new installs hold for 2 seconds');
+});
+
 test('formatting helpers', () => {
   assert.equal(C.formatDuration(0), '0m');
   assert.equal(C.formatDuration(30), '<1m');
