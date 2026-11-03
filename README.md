@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="https://chromewebstore.google.com/detail/goiilbihmgooemmokanoacgifdchcgjo"><b>Install from the Chrome Web Store</b></a><br>
-  <a href="LICENSE">MIT License</a> · <a href="PRIVACY.md">Privacy</a> · <a href="https://github.com/thisisjoey/focus-safelist/issues">Report an issue</a>
+  <a href="https://thisisjoey.github.io/focus-safelist/">Website</a> · <a href="LICENSE">MIT License</a> · <a href="PRIVACY.md">Privacy</a> · <a href="https://github.com/thisisjoey/focus-safelist/issues">Report an issue</a>
 </p>
 
 ![The Focus Safelist home page: latest uploads from safelisted channels](store/screenshot-1-home.png)

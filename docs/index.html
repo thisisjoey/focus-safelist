@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Focus Safelist for YouTube · YouTube, only from channels you trust</title>
+  <meta name="description" content="A free, open-source Chrome extension that shows YouTube videos only from channels you trust. Hides other recommendations, blocks Shorts, turns off autoplay. No account, no tracking.">
+  <link rel="canonical" href="https://thisisjoey.github.io/focus-safelist/">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#13804a">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Focus Safelist for YouTube">
+  <meta property="og:description" content="YouTube, only from channels you trust. Free and open source.">
+  <meta property="og:url" content="https://thisisjoey.github.io/focus-safelist/">
+  <meta property="og:image" content="https://thisisjoey.github.io/focus-safelist/assets/social-card.jpg">
+  <meta property="og:image:width" content="1400">
+  <meta property="og:image:height" content="560">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Focus Safelist for YouTube",
+    "applicationCategory": "BrowserApplication",
+    "operatingSystem": "Chrome",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "license": "https://opensource.org/licenses/MIT",
+    "url": "https://thisisjoey.github.io/focus-safelist/",
+    "downloadUrl": "https://chromewebstore.google.com/detail/goiilbihmgooemmokanoacgifdchcgjo",
+    "codeRepository": "https://github.com/thisisjoey/focus-safelist"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="#top"><img src="assets/icon128.png" alt="" width="28" height="28">Focus Safelist</a>
+      <ul class="nav-links">
+        <li><a href="#problem">The problem</a></li>
+        <li><a href="#tools">Tools today</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a class="btn btn-primary btn-small nav-cta" href="https://chromewebstore.google.com/detail/goiilbihmgooemmokanoacgifdchcgjo">Add to Chrome</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap" id="top">
+
+      <div class="hero">
+        <div>
+          <h1>Focus Safelist for YouTube</h1>
+          <p class="role">Free &amp; open-source Chrome extension</p>
+          <ul class="badges" aria-label="At a glance">
+            <li>Free</li>
+            <li>Open source · MIT</li>
+            <li>No account</li>
+            <li>No tracking</li>
+          </ul>
+          <p class="lede"><b>YouTube, only from channels you trust.</b> Pick the channels worth your time. Everything else YouTube puts in front of you (recommendations, Shorts, autoplay) quietly gets out of the way, while search and the videos you came for keep working.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/goiilbihmgooemmokanoacgifdchcgjo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
+              Add to Chrome, it's free
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/thisisjoey/focus-safelist">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+              View the source
+            </a>
+          </div>
+          <p class="cta-note">For Chrome on desktop. Installs in seconds from the Chrome Web Store.</p>
+        </div>
+        <img class="shot" src="assets/screenshot-1-home.webp" width="1280" height="800" alt="YouTube's home page with Focus Safelist on: a grid titled 'Latest from your safelist' showing new uploads from five chosen channels, and no other recommendations.">
+      </div>
+
+      <p class="links-row">
+        <a href="https://chromewebstore.google.com/detail/goiilbihmgooemmokanoacgifdchcgjo">Chrome Web Store</a> <a href="https://github.com/thisisjoey/focus-safelist">GitHub</a> <a href="https://github.com/thisisjoey/focus-safelist/blob/main/PRIVACY.md">Privacy policy</a> <a href="https://github.com/thisisjoey/focus-safelist/issues">Report an issue</a>
+      </p>
+
+      <section id="problem" aria-labelledby="problem-h">
+        <h2 id="problem-h">The problem</h2>
+        <p class="measure">YouTube is one of the best places to learn almost anything: 87% of its US users say it's important for figuring out how to do things they haven't done before.<sup><a href="#ref-pew">1</a></sup> It's also built to keep you watching. In 2018, YouTube's chief product officer said its recommendations drive more than 70% of the time people spend watching.<sup><a href="#ref-mohan">2</a></sup></p>
+
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-value">70%+</span>
+            <span class="stat-label">of watch time driven by YouTube's own recommendations</span>
+            <span class="stat-source">YouTube, 2018 <sup><a href="#ref-mohan">2</a></sup></span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">200B</span>
+            <span class="stat-label">YouTube Shorts views a day, on average</span>
+            <span class="stat-source">YouTube, 2026 <sup><a href="#ref-shorts">3</a></sup></span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">81%</span>
+            <span class="stat-label">of US YouTube users at least sometimes watch what the algorithm suggests</span>
+            <span class="stat-source">Pew Research Center, 2018 <sup><a href="#ref-pew">1</a></sup></span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">51 min</span>
+            <span class="stat-label">a day the average UK adult spends on YouTube, not counting the TV</span>
+            <span class="stat-source">Ofcom, 2025 <sup><a href="#ref-ofcom">4</a></sup></span>
+          </div>
+        </div>
+
+        <h3 class="gap">Recommendations pull you off course</h3>
+        <p class="measure">You open YouTube for one video, and the page around it is designed to offer the next one. In Mozilla's crowdsourced study, 71% of the videos volunteers regretted watching had been recommended by YouTube's algorithm.<sup><a href="#ref-regrets">5</a></sup> When Pew followed chains of recommendations, they led to progressively longer and more popular videos; by the last step, suggestions averaged more than 40 million views.<sup><a href="#ref-pew">1</a></sup> And in a University of Washington study of 120 YouTube users, autoplay and recommendations were what most undermined people's sense of control, while search and playlists supported it.<sup><a href="#ref-lukoff">6</a></sup></p>
+
+        <h3 class="gap">YouTube's own buttons barely help</h3>
+        <p class="measure">You can tell YouTube "Not interested" or "Don't recommend channel". Mozilla measured how much those buttons actually change what you're shown.</p>
+
+        <figure class="chart" aria-labelledby="chart-title">
+          <p class="chart-title" id="chart-title">Share of unwanted recommendations each button prevented</p>
+          <p class="chart-sub">Compared with people who didn't use the buttons · more than 20,000 volunteers, 500 million+ videos · Mozilla Foundation, 2022 <sup><a href="#ref-buttons">7</a></sup></p>
+          <ul class="bars">
+            <li class="bar-row" tabindex="0" aria-label="Don't recommend channel: prevented 43% of unwanted recommendations">
+              <span class="bar-name">"Don't recommend channel"</span>
+              <span class="bar-track"><span class="bar-fill" style="width: 43%"></span></span>
+              <span class="bar-value">43%</span>
+              <span class="bar-tip" aria-hidden="true">"Don't recommend channel" prevented 43% of unwanted recommendations, the best of the four.</span>
+            </li>
+            <li class="bar-row" tabindex="0" aria-label="Remove from watch history: prevented 29% of unwanted recommendations">
+              <span class="bar-name">"Remove from watch history"</span>
+              <span class="bar-track"><span class="bar-fill" style="width: 29%"></span></span>
+              <span class="bar-value">29%</span>
+              <span class="bar-tip" aria-hidden="true">"Remove from watch history" prevented 29% of unwanted recommendations.</span>
+            </li>
+            <li class="bar-row" tabindex="0" aria-label="Dislike: prevented 12% of unwanted recommendations">
+              <span class="bar-name">"Dislike"</span>
+              <span class="bar-track"><span class="bar-fill" style="width: 12%"></span></span>
+              <span class="bar-value">12%</span>
+              <span class="bar-tip" aria-hidden="true">"Dislike" prevented 12% of unwanted recommendations.</span>
+            </li>
+            <li class="bar-row" tabindex="0" aria-label="Not interested: prevented 11% of unwanted recommendations">
+              <span class="bar-name">"Not interested"</span>
+              <span class="bar-track"><span class="bar-fill" style="width: 11%"></span></span>
+              <span class="bar-value">11%</span>
+              <span class="bar-tip" aria-hidden="true">"Not interested" prevented 11% of unwanted recommendations.</span>
+            </li>
+          </ul>
+          <details>
+            <summary>Show as a table</summary>
+            <table>
+              <thead><tr><th scope="col">YouTube button</th><th scope="col">Unwanted recommendations prevented</th></tr></thead>
+              <tbody>
+                <tr><td>Don't recommend channel</td><td>43%</td></tr>
+                <tr><td>Remove from watch history</td><td>29%</td></tr>
+                <tr><td>Dislike</td><td>12%</td></tr>
+                <tr><td>Not interested</td><td>11%</td></tr>
+              </tbody>
+            </table>
+          </details>
+        </figure>
+        <p class="measure">More than a third of people surveyed (39.3%) felt the buttons didn't change their recommendations at all.<sup><a href="#ref-buttons">7</a></sup> Pushing channels away one at a time is a game you can't win, because there's always another one.</p>
+
+        <h3 class="gap">Short videos make focus harder</h3>
+        <p class="measure">Shorts are built for a fast, endless swipe. A 2025 meta-analysis of 71 studies and 98,299 people linked heavier short-form video use with poorer attention and self-control.<sup><a href="#ref-sfv">8</a></sup> The studies are mostly correlational, so they show a link rather than proof that short videos cause it, but it's a link worth taking seriously.</p>
+      </section>
+
+      <section id="tools" aria-labelledby="tools-h">
+        <h2 id="tools-h">Tools today</h2>
+        <p class="measure">There are good extensions for a calmer YouTube, and they mostly take one of three approaches. Each one leaves a gap.</p>
+
+        <div class="cards">
+          <div class="card">
+            <span class="tag">Hide everything</span>
+            <h3>All or nothing</h3>
+            <p>Tools like Unhook and Remove YouTube Suggestions switch off whole areas: the home feed, the sidebar, end screens. A clean slate, but they can't keep suggestions from the channels you value while hiding the rest.</p>
+          </div>
+          <div class="card">
+            <span class="tag">Block channels one by one</span>
+            <h3>A list that never ends</h3>
+            <p>Tools like BlockTube and Channel Blocker are precise, but more than 500 hours of video are uploaded every minute,<sup><a href="#ref-uploads">9</a></sup> and blocking a channel doesn't block reuploads or similar channels.<sup><a href="#ref-block">10</a></sup></p>
+          </div>
+          <div class="card">
+            <span class="tag">Block YouTube entirely</span>
+            <h3>The lessons go too</h3>
+            <p>Site blockers like StayFocusd, LeechBlock and BlockSite work, but take the tutorials and lectures with them, and strict rules tend to slip: in a Stanford study, people drifted to easier and easier settings over time.<sup><a href="#ref-kovacs">11</a></sup></p>
+          </div>
+          <div class="card ours">
+            <span class="tag">Safelist</span>
+            <h3>Flip the default</h3>
+            <p>Name the few channels you trust, and everything else steps aside on its own. Nothing new to block each day, and search and learning stay intact. That's Focus Safelist.</p>
+          </div>
+        </div>
+
+        <h3 class="gap">Why a short list beats a long one</h3>
+        <p class="measure">Research on other apps points the same way. In a six-week field study, removing the Facebook newsfeed helped people stay on task and avoid distraction.<sup><a href="#ref-lyngs">12</a></sup> And a short pause before opening a distracting app cut how often people opened it by 57% after six weeks.<sup><a href="#ref-onesec">13</a></sup> Focus Safelist brings both ideas to YouTube: no feed from channels you didn't choose, and a quick question before videos you didn't plan to watch.</p>
+
+        <div class="table-scroll gap-top">
+          <table>
+            <caption class="sr-only">How common approaches compare with a safelist</caption>
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col" class="col-ours">Focus Safelist</th>
+                <th scope="col">Hide everything</th>
+                <th scope="col">Blocklist</th>
+                <th scope="col">Site blocker</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Keeps suggestions from channels you value</th>
+                <td class="col-ours"><span class="yes">✓ Yes</span></td>
+                <td><span class="no">✕ No</span></td>
+                <td><span class="yes">✓ Yes</span></td>
+                <td><span class="no">✕ No</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Hides everyone else by default</th>
+                <td class="col-ours"><span class="yes">✓ Yes</span></td>
+                <td><span class="yes">✓ Yes</span></td>
+                <td><span class="no">✕ Only what you've listed</span></td>
+                <td><span class="yes">✓ Yes</span></td>
+              </tr>
+              <tr>
+                <th scope="row">No new channels to block each day</th>
+                <td class="col-ours"><span class="yes">✓ Yes</span></td>
+                <td><span class="yes">✓ Yes</span></td>
+                <td><span class="no">✕ No</span></td>
+                <td><span class="yes">✓ Yes</span></td>
+              </tr>
+              <tr>
+                <th scope="row">YouTube still usable for learning</th>
+                <td class="col-ours"><span class="yes">✓ Yes</span></td>
+                <td><span class="yes">✓ Yes</span></td>
+                <td><span class="yes">✓ Yes</span></td>
+                <td><span class="no">✕ No</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Website access it needs</th>
+                <td class="col-ours">YouTube only</td>
+                <td>Usually YouTube only</td>
+                <td>Usually YouTube only</td>
+                <td>Every website</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small muted note">By approach, not by product: individual tools vary, and some combine approaches.</p>
+
+        <p class="measure small muted">A safelist isn't a brand-new idea. YouTube Kids has an <a href="https://support.google.com/youtubekids/answer/6172307">"approved content only"</a> mode for children, and small open-source projects such as <a href="https://github.com/ltrinchini/Youtube-Angel">YouTube Angel</a> and <a href="https://github.com/varshneydevansh/FilterTube">FilterTube</a> can filter by channel too. Focus Safelist aims to be the complete, everyday version for adults: a safelist home page, a filtered sidebar, Shorts blocked, search that still works, and a pause before anything off-list.</p>
+      </section>
+
+      <section id="how" aria-labelledby="how-h">
+        <h2 id="how-h">How it works</h2>
+        <p class="measure">Add the channels you trust to your safelist. From then on, YouTube still works the way you know it, but only those channels get to ask for your attention.</p>
+
+        <div class="feature">
+          <div class="feature-text">
+            <h3>A calm home page</h3>
+            <p>The endless recommendation grid is replaced by the latest uploads from your safelisted channels, in YouTube's own layout. Prefer YouTube's home filtered, or straight to Subscriptions? Both are one setting away.</p>
+          </div>
+          <figure><img class="shot" src="assets/screenshot-1-home.webp" width="1280" height="800" loading="lazy" alt="Home page showing 'Latest from your safelist' with new videos from chosen channels."></figure>
+        </div>
+
+        <div class="feature">
+          <div class="feature-text">
+            <h3>One click next to Subscribe</h3>
+            <p>A <b>+&nbsp;Safelist</b> button sits beside Subscribe on every video and channel page. The sidebar next to the video you're watching suggests only safelisted channels, so one video doesn't turn into ten.</p>
+          </div>
+          <figure><img class="shot" src="assets/screenshot-2-watch.webp" width="1280" height="800" loading="lazy" alt="A Veritasium video page with a green 'Safelisted' button next to Subscribe, and a sidebar showing only videos from safelisted channels."></figure>
+        </div>
+
+        <div class="feature">
+          <div class="feature-text">
+            <h3>Other channels ask first</h3>
+            <p>Opened a link from a friend or a chat? Videos from channels outside your safelist pause on a short question: <i>is this what you came to YouTube for?</i> Go back, watch just this one, or add the channel.</p>
+          </div>
+          <figure><img class="shot" src="assets/screenshot-3-gate.webp" width="1280" height="800" loading="lazy" alt="A dialog over a blurred page: 'Rick Astley isn't on your safelist. Is this video what you came to YouTube for?' with Go back and Watch this video buttons."></figure>
+        </div>
+
+        <div class="feature">
+          <div class="feature-text">
+            <h3>Search still works</h3>
+            <p>You searched on purpose, so results stay one click away. Videos from other channels are blurred until you click one; safelisted channels show as normal. Prefer them hidden, or not filtered at all? Your call.</p>
+          </div>
+          <figure><img class="shot" src="assets/screenshot-4-search.webp" width="1280" height="800" loading="lazy" alt="Search results for 'black holes explained': a result from a non-safelisted channel is blurred with 'Not on your safelist, click to reveal', while a Kurzgesagt video shows normally."></figure>
+        </div>
+
+        <div class="feature">
+          <div class="feature-text">
+            <h3>Shorts gone, autoplay off, your rules</h3>
+            <p>Shorts are blocked everywhere: shelves, tabs, links and <code>/shorts</code> pages. Autoplay is switched off and end-screen suggestions are hidden. Every rule is a switch in Settings.</p>
+          </div>
+          <figure><img class="shot" src="assets/screenshot-5-settings.webp" width="1280" height="800" loading="lazy" alt="The Focus rules settings page with options for the home page, search results and while watching."></figure>
+        </div>
+
+        <ul class="mini-list">
+          <li><b>Hold to peek.</b> Hold a button for 2 seconds to see what's hidden, when you really need to.</li>
+          <li><b>Schedule.</b> Filter only during the hours you choose. Shorts can stay blocked all day.</li>
+          <li><b>Optional lock.</b> Add a countdown or a typed sentence before Focus can be switched off.</li>
+          <li><b>Watch time.</b> See time spent on your safelist versus everything else, per day.</li>
+          <li><b>Chrome Sync.</b> Your safelist and settings follow you to your other computers.</li>
+          <li><b>Extras.</b> Hide comments, Explore and Trending, and the notifications bell.</li>
+        </ul>
+      </section>
+
+      <section id="privacy" aria-labelledby="privacy-h">
+        <h2 id="privacy-h">Privacy</h2>
+        <p class="measure">There are no accounts, analytics, tracking or servers. Your safelist and settings stay in your browser and are synced only by Chrome itself. The extension asks for three permissions, and can read or change only one website:</p>
+        <ul class="perms">
+          <li><code>www.youtube.com</code><span>The only site it runs on. It hides what isn't on your safelist and fetches your safelisted channels' public video lists to build your home page.</span></li>
+          <li><code>storage</code><span>Saves your safelist and settings (synced by Chrome Sync) and your daily watch-time totals (this computer only).</span></li>
+          <li><code>declarativeContent</code><span>Greys out the toolbar button on other sites. Chrome applies this rule itself; the extension never sees which sites you visit.</span></li>
+        </ul>
+        <p class="small muted">When you install it, Chrome shows a single warning: "Read and change your data on www.youtube.com".</p>
+
+        <h3 class="gap">Why open source matters for extensions</h3>
+        <p class="measure">Extensions run inside your browser, and popular ones do change hands or get hijacked. The Great Suspender was sold to an unknown buyer in 2020, then removed by Google as malware in 2021.<sup><a href="#ref-suspender">14</a></sup> In December 2024, attackers pushed malicious updates to at least 35 extensions with over 2.6 million users.<sup><a href="#ref-cyberhaven">15</a></sup> In 2025, 18 extensions with 2.3 million users that weren't malicious at first turned malicious through updates.<sup><a href="#ref-reddirection">16</a></sup> Focus Safelist's code is public, so every change can be checked, and it can only ever touch youtube.com.</p>
+        <p class="small muted">Every line of code is on <a href="https://github.com/thisisjoey/focus-safelist">GitHub</a> under the MIT License. Read the full <a href="https://github.com/thisisjoey/focus-safelist/blob/main/PRIVACY.md">privacy policy</a>.</p>
+      </section>
+
+      <section id="faq" class="faq" aria-labelledby="faq-h">
+        <h2 id="faq-h">FAQ</h2>
+        <details>
+          <summary>Is it really free?</summary>
+          <p>Yes. No paid tier, no ads, no account. The source code is MIT-licensed on GitHub.</p>
+        </details>
+        <details>
+          <summary>Does it block YouTube?</summary>
+          <p>No, and that's the point. Search, your subscriptions and every video from your safelisted channels work as usual. It removes the parts designed to pull you somewhere you didn't plan to go.</p>
+        </details>
+        <details>
+          <summary>How do I see what's hidden?</summary>
+          <p>A small bar at the bottom-left of YouTube shows how many videos are hidden. Hold <b>Hold to peek</b> for 2 seconds (you can change this in Settings) to see them. You can also switch Focus off from the toolbar button.</p>
+        </details>
+        <details>
+          <summary>How many channels can I safelist?</summary>
+          <p>About 400, the limit of Chrome's sync storage. Most people need far fewer: the point is a short list of channels you'd choose on purpose.</p>
+        </details>
+        <details>
+          <summary>Does it work on my phone or the YouTube app?</summary>
+          <p>No. It's a Chrome extension, so it works in Chrome on desktop (Windows, Mac, Linux and ChromeOS).</p>
+        </details>
+        <details>
+          <summary>What about other browsers?</summary>
+          <p>It's built and tested for Chrome. Browsers that install extensions from the Chrome Web Store, such as Edge and Brave, may work but aren't tested.</p>
+        </details>
+        <details>
+          <summary>What happens when YouTube changes its layout?</summary>
+          <p>YouTube changes its pages often. Everything the extension looks for lives in one file so it can be fixed quickly. If something slips through, please <a href="https://github.com/thisisjoey/focus-safelist/issues">open an issue</a>.</p>
+        </details>
+      </section>
+
+      <div class="closing">
+        <h2>Make YouTube yours again</h2>
+        <p>Free and open source. No account, no tracking. Set up in a minute.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/goiilbihmgooemmokanoacgifdchcgjo">Add to Chrome, it's free</a>
+          <a class="btn btn-ghost" href="https://github.com/thisisjoey/focus-safelist">Star on GitHub</a>
+        </div>
+      </div>
+
+      <section id="references" class="refs" aria-labelledby="refs-h">
+        <h2 id="refs-h">References</h2>
+        <ol>
+          <li id="ref-pew">Smith, A., Toor, S. &amp; van Kessel, P. <a href="https://www.pewresearch.org/internet/2018/11/07/many-turn-to-youtube-for-childrens-content-news-how-to-lessons/">Many Turn to YouTube for Children's Content, News, How-To Lessons</a>. Pew Research Center, 7 Nov 2018. Survey of 4,594 US adults.</li>
+          <li id="ref-mohan">Neal Mohan, YouTube Chief Product Officer, speaking at CES, January 2018. Reported in <a href="https://www.tubefilter.com/2018/01/11/youtube-most-watch-time-driven-by-recommendations/">"YouTube Says 70% Of All Watch Time Is Driven By Its Own Recommendations"</a>, Tubefilter, 11 Jan 2018, and by <a href="https://www.cnet.com/tech/services-and-software/youtube-ces-2018-neal-mohan/">CNET</a>.</li>
+          <li id="ref-shorts">YouTube. <a href="https://blog.youtube/press/">YouTube press page</a>: "YouTube Shorts is now averaging over 200 billion daily views." Accessed Nov 2026.</li>
+          <li id="ref-ofcom">Ofcom. <a href="https://www.ofcom.org.uk/media-use-and-attitudes/online-habits/from-apps-to-ai-search-how-the-uk-goes-online-in-2025">From apps to AI search: how the UK goes online in 2025</a>, 10 Dec 2025. Excludes viewing on TV sets.</li>
+          <li id="ref-regrets">Mozilla Foundation. <a href="https://www.mozillafoundation.org/en/blog/mozilla-investigation-youtube-algorithm-recommends-videos-that-violate-the-platforms-very-own-policies/">Mozilla Investigation: YouTube Algorithm Recommends Videos that Violate the Platform's Very Own Policies</a> (YouTube Regrets), 7 Jul 2021. Crowdsourced from volunteers; not a random sample.</li>
+          <li id="ref-lukoff">Lukoff, K. et al. <a href="https://arxiv.org/abs/2101.11778">How the Design of YouTube Influences User Sense of Agency</a>. CHI 2021. Survey of 120 US users of the YouTube mobile app.</li>
+          <li id="ref-buttons">Mozilla Foundation. <a href="https://www.mozillafoundation.org/en/blog/mozilla-investigation-youtubes-dislike-button-other-user-controls-largely-fail-to-stop-unwanted-recommendations/">YouTube's Dislike Button, Other User Controls Largely Fail to Stop Unwanted Recommendations</a>, 20 Sep 2022 (<a href="https://www.mozillafoundation.org/en/research/library/user-controls/">full report</a>). Figures for "Remove from watch history" and "Dislike" as reported by <a href="https://www.engadget.com/mozilla-youtube-recommendation-study-080006930.html">Engadget</a>. YouTube disputed the method.</li>
+          <li id="ref-sfv">Nguyen et al. <a href="https://doi.org/10.1037/bul0000498">Feeds, feelings, and focus: A systematic review and meta-analysis examining the cognitive and mental health correlates of short-form video use</a>. <i>Psychological Bulletin</i>, Sep 2025. 71 studies, 98,299 participants. Mostly cross-sectional studies; associations, not causes.</li>
+          <li id="ref-uploads">Tubefilter. <a href="https://www.tubefilter.com/2019/05/07/number-hours-video-uploaded-to-youtube-per-minute/">More Than 500 Hours Of Content Are Now Being Uploaded To YouTube Every Minute</a>, 7 May 2019 (figure given by YouTube).</li>
+          <li id="ref-block">YouTube Help. <a href="https://support.google.com/youtube/answer/13887963">Block channels</a>: "It doesn't block videos that are reuploaded on other channels, or similar channels with related content."</li>
+          <li id="ref-kovacs">Kovacs, G., Wu, Z. &amp; Bernstein, M. S. <a href="https://arxiv.org/abs/2101.11743">Not Now, Ask Later: Users Weaken Their Behavior Change Regimen Over Time, But Expect To Re-Strengthen It Imminently</a>. Stanford University, 2021.</li>
+          <li id="ref-lyngs">Lyngs, U. et al. <a href="https://arxiv.org/abs/2001.04180">"I Just Want to Hack Myself to Not Get Distracted": Evaluating Design Interventions for Self-Control on Facebook</a>. CHI 2020.</li>
+          <li id="ref-onesec">Grüning, D. J., Riedel, F. &amp; Lorenz-Spreen, P. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9974409/">Directing smartphone use through the self-nudge app one sec</a>. <i>PNAS</i>, Feb 2023. Field data from people who chose to install the app.</li>
+          <li id="ref-suspender">BleepingComputer. <a href="https://www.bleepingcomputer.com/news/security/the-great-suspender-chrome-extensions-fall-from-grace/">The Great Suspender Chrome extension's fall from grace</a>, 6 Feb 2021.</li>
+          <li id="ref-cyberhaven">The Hacker News. <a href="https://thehackernews.com/2024/12/16-chrome-extensions-hacked-exposing.html">Dozens of Chrome Extensions Hacked, Exposing Millions of Users to Data Theft</a>, Dec 2024.</li>
+          <li id="ref-reddirection">The Register. <a href="https://www.theregister.com/2025/07/08/browser_hijacking_campaign/">Massive browser hijacking campaign infects 2.3M Chrome, Edge users</a>, 8 Jul 2025.</li>
+        </ol>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Focus Safelist for YouTube · <a href="https://github.com/thisisjoey/focus-safelist/blob/main/LICENSE">MIT License</a> · <a href="https://github.com/thisisjoey/focus-safelist">Source</a> · <a href="https://github.com/thisisjoey/focus-safelist/blob/main/PRIVACY.md">Privacy</a></span>
+      <span>Not affiliated with YouTube or Google.</span>
+    </div>
+  </footer>
+</body>
+</html>
