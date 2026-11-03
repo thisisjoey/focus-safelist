@@ -10,6 +10,7 @@
 </p>
 
 <p align="center">
+  <a href="https://chromewebstore.google.com/detail/goiilbihmgooemmokanoacgifdchcgjo"><b>Install from the Chrome Web Store</b></a><br>
   <a href="LICENSE">MIT License</a> · <a href="PRIVACY.md">Privacy</a> · <a href="https://github.com/thisisjoey/focus-safelist/issues">Report an issue</a>
 </p>
 
@@ -42,7 +43,7 @@ YouTube's home page and sidebar are tuned to keep you watching. You open it for 
 
 ## Install
 
-**Chrome Web Store:** coming soon.
+**Chrome Web Store:** [install Focus Safelist for YouTube](https://chromewebstore.google.com/detail/goiilbihmgooemmokanoacgifdchcgjo). It's free and updates automatically.
 
 **From source:**
 
