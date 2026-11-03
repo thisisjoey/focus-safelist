@@ -194,6 +194,15 @@ h3 {
   height: 18px;
   flex: none;
 }
+.btn-logo {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+.btn-small .btn-logo {
+  width: 18px;
+  height: 18px;
+}
 
 .badges {
   display: flex;
